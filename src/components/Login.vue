@@ -23,7 +23,7 @@
         :disabled="!valid"
         color="success"
         class="mr-4"
-        @click="validate"
+        @click="Login"
       >
         Validate
       </v-btn>
@@ -54,6 +54,12 @@
     }),
   
     methods: {
+        Login(){
+            if(this.$refs.form.validate()){
+                alert('เข้าสู่ระบบ')
+            }
+
+        },
       validate () {
         this.$refs.form.validate()
       },
