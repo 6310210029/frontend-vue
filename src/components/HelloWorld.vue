@@ -10,12 +10,10 @@
         />
       </v-col>
 
-      <!-- <v-col class="mb-4">
+      <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
+          Welcome to {{ username }}
         </h1>
-        Welcome to
-        </h1><br>
 
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
@@ -25,7 +23,7 @@
             target="_blank"
           >Discord Community</a>
         </p>
-      </v-col> -->
+      </v-col>
 
       <v-col
         class="mb-5"
@@ -34,7 +32,6 @@
         <h2 class="headline font-weight-bold mb-3">
           What's next?
         </h2>
-        <span @click="goToLink()">about</span>
 
         <v-row justify="center">
           <a
@@ -148,7 +145,21 @@ export default {
         text: 'Frequently Asked Questions',
         href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
       }
-    ]
-  })
+    ],
+    username: ''
+  }),
+  created () {
+    this.$EventBus.$on('getUsername', this.getUsername)
+    this.getUsername()
+  },
+  methods: {
+    getUsername () {
+      if (localStorage.getItem('username') !== null) {
+        this.username = localStorage.getItem('username')
+      } else {
+        this.username = 'Vuetify'
+      }
+    }
+  }
 }
 </script>
