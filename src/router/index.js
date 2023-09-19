@@ -24,8 +24,8 @@ const routes = [
     component:() =>import('../views/LoginView.vue')
   },
   {
-    path: '/table',
-    name: 'table',
+    path: '/ManageTable',
+    name: 'ManageTable',
     component:() =>import('../views/TableView.vue')
   }
 ]
