@@ -26,7 +26,12 @@
       </div>
 
       <v-spacer></v-spacer>
-
+      <v-btn
+        text
+        @click="goToManage()"
+      >
+        หน้าจัดการข้อมูล
+      </v-btn>
       <v-btn
         text
         @click="goToLogin()"
@@ -49,8 +54,12 @@
   
     methods: {
       goToLogin(){
-      this.$router.push('/login')
-    }
+        this.$router.push('/login')
+      },
+      goToManage(){
+        this.$router.push('/ManageTable')
+      }
+
     }
   }
   </script>
