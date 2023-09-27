@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: HomeView
   },
@@ -19,10 +19,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component:() =>import('../views/LoginView.vue')
+  },
+  {
+    path: '/ConnextBackend',
+    name: 'ConnextBackend',
+    component:() =>import('../views/ConnextBackendView.vue')
+  },
+  {
+    path: '/ManageTable',
+    name: 'ManageTable',
+    component:() =>import('../views/TableView.vue')
   }
+ 
 ]
 
 const router = new VueRouter({

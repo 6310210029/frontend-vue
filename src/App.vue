@@ -2,10 +2,10 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="dark"
       dark
     >
-      <div class="d-flex align-center">
+      <!-- <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -23,18 +23,35 @@
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
           width="100"
         />
-      </div>
+      </div> -->
 
       <v-spacer></v-spacer>
-
+      <v-btn
+        text
+        @click="goToHome()"
+      >
+      Connext Backend
+      
+      </v-btn>
+      <v-btn
+        text
+        @click="goToManage()"
+      >
+        หน้าจัดการข้อมูล
+      </v-btn>
       <v-btn
         text
         @click="goToLogin()"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
         เข้าสู่ระบบ
       </v-btn>
+      <v-btn
+        text
+        @click="goToLogin()"
+      >
+        ออกจากระบบ
+      </v-btn>
+      
     </v-app-bar>
 
     <v-main>
@@ -51,8 +68,15 @@
   
     methods: {
       goToLogin(){
-      this.$router.push('/login')
-    }
+        this.$router.push('/')
+      },
+      goToManage(){
+        this.$router.push('/ManageTable')
+      },
+      goToHome(){
+        this.$router.push('/home')
+      }
+
     }
   }
   </script>
